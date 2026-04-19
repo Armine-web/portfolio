@@ -1,0 +1,55 @@
+---
+description: Core project coding and safety standards
+alwaysApply: true
+---
+
+# General Standards
+
+- Keep changes focused and minimal for the requested task.
+- Do not remove or rewrite unrelated existing behavior.
+- Prefer readable, maintainable code over clever shortcuts.
+- Add or update tests for behavior changes when practical.
+- Avoid destructive git commands unless explicitly requested.
+- Do not commit secrets or credentials.
+- Validate with lint/tests after meaningful edits when available.
+- If requirements are unclear, ask a concise clarifying question first.
+
+- Always create small, focused components.
+- Each component should have a single responsibility.
+- Avoid large components with multiple concerns.
+
+- If a component is reused in multiple places, move it to `common/` folder.
+- Reusable components must be generic and not tied to specific business logic.
+
+- Keep components under ~100 lines when possible.
+- Split complex UI into smaller subcomponents.
+
+- Use clear and descriptive names for components.
+- Avoid duplication — reuse existing components from `common/` if available.
+
+# Frontend Project Conventions
+
+- Do not use inline styles in React components (no `style={{ ... }}`).
+- Do not use TypeScript `eslint-disable` comments to bypass linting.
+- Do not use `any` in TypeScript code.
+- Do not use `interface`; use `type` aliases instead.
+- Place each component in its own folder named after the component.
+- Use this component structure:
+  - `ComponentName/index.tsx`
+  - `ComponentName/style.(css|scss|module.css)` for styles
+  - `ComponentName/const.(ts|tsx)` for constants
+  - `ComponentName/utils.(ts|tsx)` for helpers
+
+  # Ant Design Styling Rules
+
+- Always wrap the app with Ant Design ConfigProvider.
+- Use ConfigProvider theme to override and reset styles globally.
+
+- Do NOT use inline styles for Ant Design components.
+- Do NOT override styles locally unless absolutely necessary.
+
+- All style customization must go through ConfigProvider theme tokens.
+
+- Use design tokens (colorPrimary, borderRadius, fontSize, etc.) instead of hardcoded values.
+
+- Keep styling consistent by relying on global theme configuration.

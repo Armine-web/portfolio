@@ -1,0 +1,59 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.availability-pill {
+  border-radius: 999px;
+  border: 1px solid rgba(186, 120, 253, 0.35);
+  background: rgba(112, 61, 177, 0.24);
+  color: #c69ff8;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  padding: 9px 16px;
+}
+
+.hire-button {
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d286ff 0%, #b569fe 100%);
+  color: #1c092f;
+  font-weight: 700;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+.hire-button:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 24px rgba(181, 105, 254, 0.45);
+  transform: translateY(-2px);
+}
+
+.hire-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(181, 105, 254, 0.35);
+}
+
+.hire-button:focus-visible {
+  outline: 2px solid rgba(214, 170, 255, 0.95);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .availability-pill {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    padding: 8px 12px;
+  }
+
+  .hire-button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}

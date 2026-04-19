@@ -1,0 +1,77 @@
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.portrait-card {
+  width: 100%;
+  height: min(70vh, 670px);
+  border-radius: 26px;
+  border: 1px solid rgba(182, 112, 255, 0.25);
+  background:
+    linear-gradient(180deg, rgba(44, 20, 75, 0.52) 0%, rgba(22, 10, 43, 0.6) 100%),
+    url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80")
+      center/cover no-repeat;
+}
+
+.experience-chip {
+  position: absolute;
+  left: -36px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(182, 112, 255, 0.2);
+  background: rgba(52, 23, 86, 0.9);
+  padding: 14px 18px;
+  backdrop-filter: blur(8px);
+}
+
+.chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ca8dff 0%, #ac64fe 100%);
+  color: #21083f;
+  font-size: 20px;
+}
+
+.experience-chip p {
+  margin: 0 0 2px;
+  font-size: 22px;
+  color: #d8beff;
+}
+
+.experience-chip strong {
+  font-size: 34px;
+  color: #fff;
+}
+
+@media (max-width: 1080px) {
+  .hero-visual {
+    margin-top: 12px;
+  }
+
+  .experience-chip {
+    left: 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  .portrait-card {
+    height: 450px;
+  }
+
+  .experience-chip p {
+    font-size: 18px;
+  }
+
+  .experience-chip strong {
+    font-size: 28px;
+  }
+}

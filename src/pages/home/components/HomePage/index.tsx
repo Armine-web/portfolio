@@ -1,3 +1,4 @@
+import { Header } from '../../../../components/Header/index'
 import { HeroIntro } from '../HeroIntro/index'
 import { HeroTopBar } from '../HeroTopBar/index'
 import { HeroVisual } from '../HeroVisual/index'
@@ -11,11 +12,12 @@ export function HomePage() {
     <main className={homePageClass}>
       <div className={heroShellClass}>
         <HeroTopBar />
-        <section className={heroGridClass}>
+        <section id="home" className={heroGridClass}>
           <HeroIntro />
           <HeroVisual />
         </section>
       </div>
+      <Header />
     </main>
   )
 }

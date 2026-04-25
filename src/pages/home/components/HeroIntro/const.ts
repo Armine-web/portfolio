@@ -9,5 +9,5 @@ export const SOCIAL_LINKS = [
   { href: 'mailto:you@example.com', label: 'Email', kind: 'email' },
 ] as const
 
-export const PRIMARY_CTA_TEXT = 'Download CV'
+export const PRIMARY_CTA_TEXT = 'Show CV'
 export const SECONDARY_CTA_TEXT = "Let's Talk"

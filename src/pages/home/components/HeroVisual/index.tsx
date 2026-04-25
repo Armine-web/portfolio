@@ -8,7 +8,7 @@ export function HeroVisual() {
 
   return (
     <div className={classNames.root}>
-      <div className={classNames.card} />
+      <div className={classNames.card} >
       <div className={classNames.chip}>
         <span className={classNames.icon}>
           <ThunderboltOutlined />
@@ -19,5 +19,7 @@ export function HeroVisual() {
         </div>
       </div>
     </div>
+    </div>
+
   )
 }

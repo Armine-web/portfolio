@@ -1,4 +1,9 @@
 import { DownloadOutlined, GithubOutlined, MessageOutlined } from '@ant-design/icons'
+import ReactMarkdown from 'react-markdown'
+import { useState } from 'react'
+import type { KeyboardEvent } from 'react'
+import { generateGeminiResponse } from '../../../../services/geminiService';
+import { cvData } from '../../../../data/cvData';
 import {
   HERO_DESCRIPTION,
   HERO_FIRST_NAME,
@@ -8,6 +13,7 @@ import {
 } from './const'
 import { getSocialLinks } from './utils'
 import './style.css'
+import { cvMarkdown } from '../../../../data/cvMarkdown';
 
 const socialIconByKind = {
   github: <GithubOutlined />,
@@ -17,6 +23,49 @@ const socialIconByKind = {
 
 export function HeroIntro() {
   const socialLinks = getSocialLinks()
+  const [geminiPrompt, setGeminiPrompt] = useState('')
+  const [geminiAnswer, setGeminiAnswer] = useState('')
+  const [isGeminiLoading, setIsGeminiLoading] = useState(false)
+  const [geminiError, setGeminiError] = useState('')
+  const [isCvVisible, setIsCvVisible] = useState(false)
+  const [isInputVisible, setIsInputVisible] = useState(false)
+
+  const handleTalkClick = async () => {
+    if (!isInputVisible) {
+      setIsInputVisible(true);
+      return;
+    }
+
+    if (isGeminiLoading) return;
+
+    const currentPrompt = geminiPrompt.trim();
+    if (!currentPrompt) return;
+
+    setIsGeminiLoading(true);
+    setGeminiError('');
+    setGeminiPrompt('');
+
+    try {
+      const fullPrompt = `Context: ${JSON.stringify(cvData)}. Request: ${currentPrompt}`;
+      const response = await generateGeminiResponse(fullPrompt);
+      setGeminiAnswer(response);
+    } catch (error: any) {
+      setGeminiError(error.message);
+    } finally {
+      setIsGeminiLoading(false);
+    }
+  };
+
+  const handlePromptKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (
+      event.key === 'Enter' &&
+      !event.shiftKey &&
+      !isGeminiLoading
+    ) {
+      event.preventDefault();
+      void handleTalkClick();
+    }
+  }
 
   return (
     <div className="hero-content">
@@ -42,13 +91,60 @@ export function HeroIntro() {
       </div>
 
       <div className="cta-row">
-        <button type="button" className="primary-cta">
-          {PRIMARY_CTA_TEXT} <DownloadOutlined />
+        <button
+          type="button"
+          className="primary-cta"
+          onClick={() => setIsCvVisible(!isCvVisible)}
+        >
+          {isCvVisible ? "Hide CV" : PRIMARY_CTA_TEXT}
         </button>
-        <button type="button" className="secondary-cta">
-          {SECONDARY_CTA_TEXT}
+        {isCvVisible && (
+          <div className="cv-container">
+            <div className="cv-header-actions">
+              <a
+                href="/Armine_Aghajanyan_CV.pdf"
+                download="Armine_Aghajanyan_CV.pdf"
+                className="cv-download-link"
+              >
+                <DownloadOutlined />
+              </a>
+            </div>
+            <ReactMarkdown>{cvMarkdown}</ReactMarkdown>
+          </div>
+        )}
+
+        <button
+          type="button"
+          className="secondary-cta"
+          onClick={handleTalkClick}
+          disabled={isGeminiLoading}
+        >
+          {isInputVisible ? 'Send' : SECONDARY_CTA_TEXT}
         </button>
       </div>
+
+      {isInputVisible && (
+        <div className="cta-row" style={{ animation: 'fadeIn 0.3s ease' }}>
+          <textarea
+            className="gemini-prompt-input"
+            value={geminiPrompt}
+            onChange={(event) => setGeminiPrompt(event.target.value)}
+            onKeyDown={handlePromptKeyDown}
+            placeholder="Write your prompt for Gemini..."
+            rows={2}
+            disabled={isGeminiLoading}
+            autoFocus
+          />
+        </div>
+      )}
+
+      {isGeminiLoading ? <p className="gemini-state">Thinking...</p> : null}
+      {geminiError ? <p className="gemini-error">{geminiError}</p> : null}
+      {geminiAnswer ? (
+        <div className="gemini-answer">
+          <ReactMarkdown>{geminiAnswer}</ReactMarkdown>
+        </div>
+      ) : null}
     </div>
   )
 }

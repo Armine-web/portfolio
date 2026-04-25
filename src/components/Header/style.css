@@ -127,6 +127,13 @@
   line-height: 1;
 }
 
+@media (max-width: 1080px){
+  .header-dock{
+    bottom: auto;
+    top: 0;
+  }
+}
+
 @media (max-width: 560px) {
   .header-dock {
     min-height: 88px;

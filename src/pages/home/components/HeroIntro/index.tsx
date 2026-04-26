@@ -1,6 +1,6 @@
 import { DownloadOutlined, GithubOutlined, MessageOutlined } from '@ant-design/icons'
 import ReactMarkdown from 'react-markdown'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import type { KeyboardEvent } from 'react'
 import { generateGeminiResponse } from '../../../../services/geminiService';
 import { cvData } from '../../../../data/cvData';
@@ -30,6 +30,15 @@ export function HeroIntro() {
   const [isCvVisible, setIsCvVisible] = useState(false)
   const [isInputVisible, setIsInputVisible] = useState(false)
 
+  const cvContext = useMemo(() => {
+    return JSON.stringify(cvData);
+  }, []);
+
+  const renderedAnswer = useMemo(() => {
+    if (!geminiAnswer) return null;
+    return <ReactMarkdown>{geminiAnswer}</ReactMarkdown>;
+  }, [geminiAnswer]);
+
   const handleTalkClick = async () => {
     if (!isInputVisible) {
       setIsInputVisible(true);
@@ -46,7 +55,7 @@ export function HeroIntro() {
     setGeminiPrompt('');
 
     try {
-      const fullPrompt = `Context: ${JSON.stringify(cvData)}. Request: ${currentPrompt}`;
+      const fullPrompt = `Context: ${cvContext}. Request: ${currentPrompt}`;
       const response = await generateGeminiResponse(fullPrompt);
       setGeminiAnswer(response);
     } catch (error: any) {
@@ -142,7 +151,7 @@ export function HeroIntro() {
       {geminiError ? <p className="gemini-error">{geminiError}</p> : null}
       {geminiAnswer ? (
         <div className="gemini-answer">
-          <ReactMarkdown>{geminiAnswer}</ReactMarkdown>
+          {renderedAnswer}
         </div>
       ) : null}
     </div>

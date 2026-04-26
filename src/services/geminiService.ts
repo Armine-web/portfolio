@@ -72,13 +72,15 @@ export async function generateGeminiResponse(
             }
           ]
         })
-
+    
+        console.log(response.data)
+    
         const text = response.data.candidates?.[0]?.content?.parts?.[0]?.text
-
+    
         if (!text) {
           throw new Error('Gemini API returned an empty response.')
         }
-
+    
         return text
       } catch (error) {
         const axiosError = error as AxiosError
@@ -86,19 +88,24 @@ export async function generateGeminiResponse(
         const responseData = axiosError.response?.data as
           | { error?: { message?: string } }
           | undefined
+    
+     
+        console.log('STATUS:', status)
+        console.log('ERROR BODY:', responseData)
+    
         const apiErrorMessage = responseData?.error?.message
-
+    
         if (status === 429 && attempts < MAX_429_RETRIES) {
           const retryAfterSeconds = getRetryAfterSeconds(axiosError)
           if (!retryAfterSeconds) {
             break
           }
-
+    
           attempts += 1
           await wait(retryAfterSeconds * 1000)
           continue
         }
-
+    
         if (status === 429) {
           const retryAfterSeconds = getRetryAfterSeconds(axiosError)
           const retryHint = retryAfterSeconds ? ` Retry after ${retryAfterSeconds}s.` : ''
@@ -106,12 +113,12 @@ export async function generateGeminiResponse(
             `Gemini request limit reached (429). Please wait and try again.${retryHint}`
           )
         }
-
+    
         if (status === 400 && apiErrorMessage?.includes('is not found')) {
           unavailableModels.push(candidateModel)
           break
         }
-
+    
         throw error
       }
     }

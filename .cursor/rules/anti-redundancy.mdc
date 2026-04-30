@@ -1,0 +1,13 @@
+---
+description: Enforce DRY principle, code reusability, and architectural consistency across the project.
+alwaysApply: true
+---
+
+# Global Anti-Redundancy Rules
+
+- **Search Before Coding**: For every new task, you MUST search the codebase for existing solutions or similar logic first.
+- **The Rule of Three**: If logic or a UI pattern is repeated in 2 or more places, it MUST be extracted into a shared utility, hook, or component within `src/shared`.
+- **AntD Consistency**: Do not build custom UI elements (Buttons, Modals, Spinners) if the base Ant Design components can satisfy the requirement via props or configuration.
+- **Unified Type System**: Centralize shared data structures and interfaces in `src/types`. Do not redefine the same interface in multiple files.
+- **Gemini Service Layer**: All AI-related requests must pass through a unified API wrapper or shared hook to ensure consistent error handling, logging, and loading states.
+- **Dependency Awareness**: Check `package.json` before suggesting new libraries. Use existing tools (React, AntD, Redux Toolkit, etc.) to their full potential before adding overhead.

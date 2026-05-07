@@ -1,0 +1,118 @@
+.services-section {
+  background: #040009;
+  padding: 70px 24px 100px;
+}
+
+.services-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.services-head {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+.services-eyebrow {
+  display: block;
+  color: #9f86c0;
+  letter-spacing: 2.5px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.services-title {
+  margin: 0 !important;
+  color: #efe7fd !important;
+  font-size: clamp(2rem, 4.4vw, 3.2rem) !important;
+  line-height: 1.1 !important;
+}
+
+.services-description {
+  margin: 36px 0 0 !important;
+  color: #bca9d9 !important;
+  font-size: 1.24rem;
+  line-height: 1.55;
+  max-width: 480px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  min-height: 255px;
+  border-radius: 20px !important;
+  border: 1px solid rgba(193, 133, 255, 0.14);
+  background: linear-gradient(180deg, rgba(63, 18, 89, 0.76), rgba(35, 10, 52, 0.95)) !important;
+}
+
+.service-card .ant-card-body {
+  height: 100%;
+  padding: 24px 24px 26px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(220, 190, 255, 0.18);
+  background: linear-gradient(180deg, rgba(197, 148, 255, 0.92), rgba(151, 86, 231, 0.92));
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #2a0b41;
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+.service-title {
+  color: #f5edff !important;
+  margin: 0 0 12px !important;
+  font-size: 2rem;
+  line-height: 1.2 !important;
+}
+
+.service-description {
+  margin: 0 !important;
+  color: #af9bcf !important;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1120px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .services-head {
+    grid-template-columns: 1fr;
+  }
+
+  .services-description {
+    margin-top: 0 !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 56px 16px 74px;
+  }
+}
+
+@media (max-width: 560px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

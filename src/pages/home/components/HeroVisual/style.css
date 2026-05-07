@@ -12,7 +12,7 @@
   border: 1px solid rgba(182, 112, 255, 0.25);
   background:
     linear-gradient(180deg, rgba(44, 20, 75, 0.52) 0%, rgba(22, 10, 43, 0.6) 100%),
-    url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80")
+    url("../../../../assets/HeroImage.jpg")
       center/cover no-repeat;
 }
 

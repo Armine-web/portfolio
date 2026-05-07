@@ -1,4 +1,3 @@
-/* Bottom hover zone: move cursor to lower edge of the viewport to reveal the nav. */
 .header-dock {
   position: fixed;
   left: 0;
@@ -127,12 +126,6 @@
   line-height: 1;
 }
 
-@media (max-width: 1080px){
-  .header-dock{
-    bottom: auto;
-    top: 0;
-  }
-}
 
 @media (max-width: 560px) {
   .header-dock {

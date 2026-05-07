@@ -1,0 +1,124 @@
+.reviewers-section {
+  background: #21062f;
+  padding: 72px 24px 110px;
+}
+
+.reviewers-shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reviewers-eyebrow {
+  display: inline-block;
+  color: #a68bc8;
+  letter-spacing: 2.6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.review-card {
+  position: relative;
+  margin-top: 28px;
+  border-radius: 28px !important;
+  border: 1px solid rgba(193, 133, 255, 0.14);
+  background: #2b0c3f !important;
+}
+
+.review-card .ant-card-body {
+  padding: 64px 56px 40px !important;
+}
+
+.review-avatar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  border: 2px solid #4d276e;
+  object-fit: cover;
+}
+
+.review-quote-icon {
+  color: #b989ff;
+  font-size: 58px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.review-quote {
+  color: #d8c7ef !important;
+  font-size: 2.65rem;
+  line-height: 1.55 !important;
+  margin: 0 auto 24px !important;
+  max-width: 760px;
+}
+
+.review-expand-button {
+  background: transparent;
+  border: none;
+  color: #d0a9ff;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 4px;
+  padding: 0;
+}
+
+.review-expand-button:hover {
+  color: #edd8ff;
+}
+
+.review-name {
+  color: #f0e3ff !important;
+  margin: 0 0 6px !important;
+  font-size: 2rem;
+}
+
+.review-role {
+  color: #9077ab !important;
+  letter-spacing: 1.3px;
+  font-size: 0.84rem;
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.review-dot {
+  width: 14px;
+  height: 4px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(188, 147, 233, 0.25);
+}
+
+.review-dot-active {
+  width: 30px;
+  background: #d0a9ff;
+}
+
+@media (max-width: 768px) {
+  .reviewers-section {
+    padding: 56px 16px 84px;
+  }
+
+  .review-card .ant-card-body {
+    padding: 56px 20px 32px !important;
+  }
+
+  .review-quote {
+    font-size: 1.08rem;
+  }
+
+  .review-name {
+    font-size: 1.6rem;
+  }
+}

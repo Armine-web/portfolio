@@ -76,7 +76,7 @@
 }
 
 .nav-item:hover:not(.nav-item--active) {
-  color: #d0c8e8;
+  color: #e4cfb2;
 }
 
 .nav-item:active:not(.nav-item--active) {
@@ -84,12 +84,12 @@
 }
 
 .nav-item:focus-visible {
-  outline: 2px solid rgba(181, 102, 255, 0.85);
+  outline: 2px solid rgba(192, 120, 64, 0.9);
   outline-offset: 2px;
 }
 
 .nav-item--active {
-  color: #b566ff;
+  color: #d4995c;
 }
 
 .nav-item-inner {
@@ -107,7 +107,7 @@
 }
 
 .nav-item--active .nav-item-inner {
-  background: #464563;
+  background: #4b3d34;
 }
 
 .nav-icon {

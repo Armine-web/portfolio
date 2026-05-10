@@ -66,21 +66,42 @@ export async function generateGeminiResponse(
     while (true) {
       try {
         const response = await axios.post<GeminiGenerateContentResponse>(url, {
+          systemInstruction: {
+            parts: [
+              {
+                text: `
+        You are Armine, a frontend developer.
+        
+        Answer interview questions in first person.
+        
+        Rules:
+        - Speak as if you ARE Armine
+        - Use "I", "my", "me"
+        - Never say "the candidate"
+        - Use resume information naturally
+        - Be concise and professional
+        - If something is unknown, say so honestly
+        `
+              }
+            ]
+          },
+
           contents: [
             {
+              role: 'user',
               parts: [{ text: prompt }]
             }
           ]
         })
-    
+
         console.log(response.data)
-    
+
         const text = response.data.candidates?.[0]?.content?.parts?.[0]?.text
-    
+
         if (!text) {
           throw new Error('Gemini API returned an empty response.')
         }
-    
+
         return text
       } catch (error) {
         const axiosError = error as AxiosError
@@ -88,24 +109,24 @@ export async function generateGeminiResponse(
         const responseData = axiosError.response?.data as
           | { error?: { message?: string } }
           | undefined
-    
-     
+
+
         console.log('STATUS:', status)
         console.log('ERROR BODY:', responseData)
-    
+
         const apiErrorMessage = responseData?.error?.message
-    
+
         if (status === 429 && attempts < MAX_429_RETRIES) {
           const retryAfterSeconds = getRetryAfterSeconds(axiosError)
           if (!retryAfterSeconds) {
             break
           }
-    
+
           attempts += 1
           await wait(retryAfterSeconds * 1000)
           continue
         }
-    
+
         if (status === 429) {
           const retryAfterSeconds = getRetryAfterSeconds(axiosError)
           const retryHint = retryAfterSeconds ? ` Retry after ${retryAfterSeconds}s.` : ''
@@ -113,12 +134,12 @@ export async function generateGeminiResponse(
             `Gemini request limit reached (429). Please wait and try again.${retryHint}`
           )
         }
-    
+
         if (status === 400 && apiErrorMessage?.includes('is not found')) {
           unavailableModels.push(candidateModel)
           break
         }
-    
+
         throw error
       }
     }

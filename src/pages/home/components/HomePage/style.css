@@ -8,10 +8,10 @@
   margin: 0 auto;
   min-height: calc(100vh - 48px);
   border-radius: 30px;
-  border: 1px solid rgba(188, 120, 255, 0.2);
+  border: 1px solid rgba(212, 168, 120, 0.22);
   background:
-    linear-gradient(180deg, rgba(101, 51, 160, 0.12) 0%, rgba(17, 7, 32, 0.6) 100%),
-    radial-gradient(circle at 15% 20%, rgba(108, 55, 169, 0.28) 0, rgba(26, 10, 48, 0) 55%);
+    linear-gradient(180deg, rgba(120, 72, 44, 0.16) 0%, rgba(24, 14, 9, 0.62) 100%),
+    radial-gradient(circle at 15% 20%, rgba(140, 82, 48, 0.26) 0, rgba(28, 16, 10, 0) 55%);
   box-shadow: 0 20px 40px rgba(4, 0, 10, 0.45);
   padding: 26px 32px 24px;
 }

@@ -1,6 +1,6 @@
 .aboutSection {
-  background: #180424;
-  color: #f5ecff;
+  background: #0c0705;
+  color: #faf3ea;
   padding: 84px 24px 96px;
 }
 
@@ -8,14 +8,14 @@
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 32px;
-  background: linear-gradient(180deg, rgba(48, 13, 69, 0.72), rgba(31, 8, 45, 0.94));
-  border: 1px solid rgba(196, 142, 255, 0.1);
+  background: linear-gradient(180deg, rgba(58, 32, 20, 0.75), rgba(36, 20, 12, 0.94));
+  border: 1px solid rgba(212, 170, 120, 0.12);
   padding: 24px;
 }
 
 .imageWrapper {
   border-radius: 24px;
-  background: #7c658d;
+  background: #6b5545;
   padding: 12px;
   transition: transform 260ms ease, box-shadow 260ms ease;
 }
@@ -47,7 +47,7 @@
 }
 
 .overline {
-  color: #b69be2;
+  color: #c49a72;
   letter-spacing: 2.8px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -56,14 +56,14 @@
 }
 
 .mainTitle {
-  color: #efe4ff !important;
+  color: #fdf5eb !important;
   font-size: clamp(2.2rem, 5vw, 3.45rem) !important;
   line-height: 1.1 !important;
   margin: 0 0 22px !important;
 }
 
 .description {
-  color: #bca9d9;
+  color: #c9b098;
   font-size: 1.16rem;
   line-height: 1.62;
   margin-bottom: 36px !important;
@@ -77,37 +77,22 @@
   width: 172px;
   min-height: 122px;
   border-radius: 16px !important;
-  background: #2b1242 !important;
+  background: #3a2618 !important;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: none !important;
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease,
     background-color 220ms ease;
 }
 
-.statCard:hover {
-  transform: translateY(-6px);
-  border-color: rgba(211, 174, 255, 0.3);
-  box-shadow: 0 14px 30px rgba(7, 2, 12, 0.45) !important;
-  background: #32164b !important;
-}
-
-.statCard:hover .statValue {
-  color: #f6ecff !important;
-}
-
-.statCard:hover .statLabel {
-  color: #c3a6e6;
-}
-
 .statValue {
-  color: #ede1ff !important;
+  color: #fdf2e6 !important;
   margin: 0 0 6px !important;
   font-size: 1.2rem !important;
   font-weight: 700 !important;
 }
 
 .statLabel {
-  color: #8f7aa9;
+  color: #9a8572;
   letter-spacing: 1.4px;
   font-size: 0.75rem;
   font-weight: 600;

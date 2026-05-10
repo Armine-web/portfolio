@@ -1,5 +1,5 @@
 .services-section {
-  background: #040009;
+  background: #0b0604;
   padding: 70px 24px 100px;
 }
 
@@ -18,7 +18,7 @@
 
 .services-eyebrow {
   display: block;
-  color: #9f86c0;
+  color: #b89872;
   letter-spacing: 2.5px;
   font-size: 0.82rem;
   font-weight: 700;
@@ -27,14 +27,14 @@
 
 .services-title {
   margin: 0 !important;
-  color: #efe7fd !important;
+  color: #fdf5eb !important;
   font-size: clamp(2rem, 4.4vw, 3.2rem) !important;
   line-height: 1.1 !important;
 }
 
 .services-description {
   margin: 36px 0 0 !important;
-  color: #bca9d9 !important;
+  color: #c9b098 !important;
   font-size: 1.24rem;
   line-height: 1.55;
   max-width: 480px;
@@ -49,8 +49,8 @@
 .service-card {
   min-height: 255px;
   border-radius: 20px !important;
-  border: 1px solid rgba(193, 133, 255, 0.14);
-  background: linear-gradient(180deg, rgba(63, 18, 89, 0.76), rgba(35, 10, 52, 0.95)) !important;
+  border: 1px solid rgba(210, 168, 120, 0.16);
+  background: linear-gradient(180deg, rgba(62, 36, 24, 0.78), rgba(38, 22, 14, 0.95)) !important;
 }
 
 .service-card .ant-card-body {
@@ -64,18 +64,18 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  border: 1px solid rgba(220, 190, 255, 0.18);
-  background: linear-gradient(180deg, rgba(197, 148, 255, 0.92), rgba(151, 86, 231, 0.92));
+  border: 1px solid rgba(235, 200, 160, 0.22);
+  background: linear-gradient(180deg, rgba(228, 188, 130, 0.95), rgba(176, 110, 52, 0.95));
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: #2a0b41;
+  color: #1f1209;
   font-size: 20px;
   margin-bottom: 22px;
 }
 
 .service-title {
-  color: #f5edff !important;
+  color: #fff6ea !important;
   margin: 0 0 12px !important;
   font-size: 2rem;
   line-height: 1.2 !important;
@@ -83,7 +83,7 @@
 
 .service-description {
   margin: 0 !important;
-  color: #af9bcf !important;
+  color: #aa9278 !important;
   font-size: 1.08rem;
   line-height: 1.55;
 }

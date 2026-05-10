@@ -9,9 +9,9 @@
   width: 100%;
   height: min(70vh, 670px);
   border-radius: 26px;
-  border: 1px solid rgba(182, 112, 255, 0.25);
+  border: 1px solid rgba(200, 145, 100, 0.28);
   background:
-    linear-gradient(180deg, rgba(44, 20, 75, 0.52) 0%, rgba(22, 10, 43, 0.6) 100%),
+    linear-gradient(180deg, rgba(48, 28, 18, 0.55) 0%, rgba(22, 12, 8, 0.62) 100%),
     url("../../../../assets/HeroImage.jpg")
       center/cover no-repeat;
 }
@@ -24,8 +24,8 @@
   align-items: center;
   gap: 16px;
   border-radius: 18px;
-  border: 1px solid rgba(182, 112, 255, 0.2);
-  background: rgba(52, 23, 86, 0.9);
+  border: 1px solid rgba(200, 145, 100, 0.22);
+  background: rgba(48, 28, 18, 0.92);
   padding: 8px 18px;
   backdrop-filter: blur(8px);
 }
@@ -37,15 +37,15 @@
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #ca8dff 0%, #ac64fe 100%);
-  color: #21083f;
+  background: linear-gradient(180deg, #dcb078 0%, #a86630 100%);
+  color: #1f1108;
   font-size: 20px;
 }
 
 .experience-chip p {
   margin: 0 0 2px;
   font-size: 22px;
-  color: #d8beff;
+  color: #dfc4a8;
 }
 
 .experience-chip strong {

@@ -44,7 +44,7 @@ export const AboutMe = () => {
           <Col xs={24} lg={12}>
             <div className={styles.contentBox}>
 
-              <div className="static md:absolute md:-top-[6.5rem] md:-right-[3.5rem] overflow-hidden rounded-full ring-2 ring-amber-700/30 width-[100px] height-[100px] ">
+              <div className="static md:absolute md:-top-[8.5rem] md:-right-[1.5rem] overflow-hidden rounded-full ring-2 ring-amber-700/30 width-[100px] height-[100px] ">
                 {showVideo ? (
                   <div className="relative w-">
                     <video

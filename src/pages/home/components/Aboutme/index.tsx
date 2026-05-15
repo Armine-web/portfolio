@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Card, Col, Row, Space, Typography } from 'antd'
 import demonstrationImg from '../../../../assets/demonstration.png'
 import styles from './styles.module.css'
-// import { TalkingAvatar } from './TalkingAvatar/index'
 import { DID_AVATAR_IMAGE_URL } from '../../../../services/didTalksConstants'
 import avatarVideo from '../../../../assets/avatar.mp4'
 
@@ -25,13 +24,12 @@ const StatCard = ({ value, label }: StatItemProps) => (
 export const AboutMe = () => {
   const showVideo = Boolean(avatarVideo)
   const [isPlaying, setIsPlaying] = useState(false)
+
   return (
-
-
     <section id="about" className={styles.aboutSection}>
       <div className={styles.aboutContainer}>
-        <Row gutter={[40, 28]} align="middle">
-          <Col xs={24} lg={12}>
+        <Row gutter={[40, 28]} align="middle" className={styles.responsiveRow}>
+          <Col xs={24} lg={12} className={styles.imageColumn}>
             <div className={styles.imageWrapper}>
               <img
                 src={demonstrationImg}
@@ -41,18 +39,17 @@ export const AboutMe = () => {
             </div>
           </Col>
 
-          <Col xs={24} lg={12}>
+          <Col xs={24} lg={12} className={styles.contentColumn}>
             <div className={styles.contentBox}>
-
-              <div className="static md:absolute md:-top-[8.5rem] md:-right-[1.5rem] overflow-hidden rounded-full ring-2 ring-amber-700/30 width-[100px] height-[100px] ">
+              <div className={styles.inlineAvatar}>
                 {showVideo ? (
-                  <div className="relative w-">
+                  <div className={styles.inlineAvatarVideoWrap}>
                     <video
                       src={avatarVideo}
                       playsInline
-                      className="h-26 w-26 cursor-pointer object-cover md:h-44 md:w-44"
-                      onClick={(e) => {
-                        const video = e.currentTarget
+                      className={styles.inlineAvatarMedia}
+                      onClick={(event) => {
+                        const video = event.currentTarget
 
                         if (video.paused) {
                           void video.play()
@@ -66,11 +63,10 @@ export const AboutMe = () => {
                       onPause={() => setIsPlaying(false)}
                     />
 
-
                     {!isPlaying && (
-                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm">
-                          <svg viewBox="0 0 24 24" fill="white" className="ml-0.5 h-5 w-5">
+                      <div className={styles.inlineAvatarPlayOverlay}>
+                        <div className={styles.inlineAvatarPlayButton}>
+                          <svg viewBox="0 0 24 24" className={styles.inlineAvatarPlayIcon}>
                             <path d="M8 5v14l11-7z" />
                           </svg>
                         </div>
@@ -81,9 +77,9 @@ export const AboutMe = () => {
                   <img
                     src={DID_AVATAR_IMAGE_URL}
                     alt="Portrait used for the AI talking avatar"
-                    className="h-36 w-36 object-cover md:h-44 md:w-44"
-                    width={176}
-                    height={176}
+                    className={styles.inlineAvatarMedia}
+                    width={100}
+                    height={100}
                     decoding="async"
                   />
                 )}
@@ -109,9 +105,7 @@ export const AboutMe = () => {
             </div>
           </Col>
         </Row>
-        {/* <TalkingAvatar /> */}
       </div>
     </section>
   )
-
 }

@@ -1,4 +1,4 @@
-import { ConfigProvider } from 'antd'
+import { App as AntApp, ConfigProvider } from 'antd'
 import { HomePage } from './pages/home/components/HomePage/index'
 
 const portfolioTheme = {
@@ -12,7 +12,9 @@ const portfolioTheme = {
 function App() {
   return (
     <ConfigProvider theme={portfolioTheme}>
-      <HomePage />
+      <AntApp>
+        <HomePage />
+      </AntApp>
     </ConfigProvider>
   )
 }

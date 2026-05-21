@@ -1,4 +1,4 @@
-import { DownloadOutlined, GithubOutlined, MessageOutlined } from '@ant-design/icons'
+import { DownloadOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/icons'
 import ReactMarkdown from 'react-markdown'
 import { useState, useMemo } from 'react'
 import type { KeyboardEvent } from 'react'
@@ -17,7 +17,7 @@ import { cvMarkdown } from '../../../../data/cvMarkdown';
 
 const socialIconByKind = {
   github: <GithubOutlined />,
-  message: <MessageOutlined />,
+  linkedin: <LinkedinOutlined />,
   email: '@',
 } as const
 

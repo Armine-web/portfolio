@@ -2,6 +2,7 @@ import type { ComponentType } from 'react'
 import { MailOutlined, WhatsAppOutlined, MessageOutlined } from '@ant-design/icons'
 
 export const CONTACT_SECTION_ID = 'contact'
+export const CONTACT_TELEGRAM_DISPLAY_VALUE = 'Open in Telegram'
 export const CONTACT_EYEBROW = 'CONTACT'
 export const CONTACT_TITLE = 'Let’s Create Something Great'
 export const CONTACT_DESCRIPTION =
@@ -18,5 +19,10 @@ export type ContactChannel = {
 export const CONTACT_CHANNELS: ContactChannel[] = [
   { id: 'email', label: 'Email', value: 'armine.aghajanyan123@gmail.com', icon: MailOutlined },
   { id: 'whatsapp', label: 'WhatsApp', value: '+374 77474851', icon: WhatsAppOutlined },
-  { id: 'messenger', label: 'Messenger', value: 'armine.agajanyan.3', icon: MessageOutlined },
+  {
+    id: 'telegram',
+    label: 'Telegram',
+    value: CONTACT_TELEGRAM_DISPLAY_VALUE,
+    icon: MessageOutlined,
+  },
 ]

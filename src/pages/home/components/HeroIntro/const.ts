@@ -5,7 +5,7 @@ export const HERO_DESCRIPTION =
 
 export const SOCIAL_LINKS = [
   { href: 'https://github.com/Armine-web', label: 'GitHub', kind: 'github' },
-  { href: '#chat', label: 'Message', kind: 'message' },
+  { href: 'https://www.linkedin.com/in/armine-aghajanyan/', label: 'LinkedIn', kind: 'linkedin' },
   { href: 'mailto:armine.aghajanyan123@gmail.com', label: 'Email', kind: 'email' },
 ] as const
 

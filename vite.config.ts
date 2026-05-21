@@ -5,11 +5,20 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const didApiKey = env.VITE_DID_API_KEY ?? ''
+  const telegramBotToken = env.VITE_TELEGRAM_BOT_TOKEN ?? ''
 
   return {
     plugins: [react()],
     server: {
       proxy: {
+        '/api/telegram/bot': {
+          target: 'https://api.telegram.org',
+          changeOrigin: true,
+          rewrite: (path) => {
+            const endpoint = path.replace(/^\/api\/telegram\/bot/, '') || '/sendMessage'
+            return `/bot${telegramBotToken}${endpoint}`
+          },
+        },
         '/api/d-id': {
           target: 'https://api.d-id.com',
           changeOrigin: true,

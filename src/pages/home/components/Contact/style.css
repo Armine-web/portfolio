@@ -45,6 +45,27 @@
   gap: 14px;
 }
 
+.contact-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.contact-item-link .contact-item,
+.contact-item-link .contact-item * {
+  pointer-events: none;
+}
+
+.contact-item-link:focus-visible {
+  outline: none;
+}
+
+.contact-item-link:focus-visible .contact-item {
+  border-color: rgba(228, 190, 140, 0.55);
+  box-shadow: 0 0 0 3px rgba(176, 110, 52, 0.28);
+}
+
 .contact-item {
   border-radius: 16px !important;
   border: 1px solid rgba(210, 168, 120, 0.16);

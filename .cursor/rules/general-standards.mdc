@@ -21,11 +21,15 @@ alwaysApply: true
 - If a component is reused in multiple places, move it to `common/` folder.
 - Reusable components must be generic and not tied to specific business logic.
 
-- Keep components under ~100 lines when possible.
+- Keep components as short as possible.
 - Split complex UI into smaller subcomponents.
 
 - Use clear and descriptive names for components.
 - Avoid duplication — reuse existing components from `common/` if available.
+
+- Avoid prop drilling; prefer composition or context when appropriate.
+- Keep business logic outside UI components when possible.
+- Use memoization only when performance issues are proven.
 
 # Frontend Project Conventions
 

@@ -1,17 +1,13 @@
 import { Card, Typography } from 'antd'
-import {
-  SERVICE_ITEMS,
-  SERVICES_DESCRIPTION,
-  SERVICES_EYEBROW,
-  SERVICES_SECTION_ID,
-  SERVICES_TITLE,
-} from './const'
+import { useTranslation } from 'react-i18next'
+import { SERVICE_ITEMS, SERVICES_SECTION_ID } from './const'
 import { getServicesGridClassName } from './utils'
 import './style.css'
 
 const { Title, Text, Paragraph } = Typography
 
 export function Services() {
+  const { t } = useTranslation()
   const gridClassName = getServicesGridClassName()
 
   return (
@@ -19,12 +15,12 @@ export function Services() {
       <div className="services-shell">
         <header className="services-head">
           <div>
-            <Text className="services-eyebrow">{SERVICES_EYEBROW}</Text>
+            <Text className="services-eyebrow">{t('services.eyebrow')}</Text>
             <Title level={2} className="services-title">
-              {SERVICES_TITLE}
+              {t('services.title')}
             </Title>
           </div>
-          <Paragraph className="services-description">{SERVICES_DESCRIPTION}</Paragraph>
+          <Paragraph className="services-description">{t('services.description')}</Paragraph>
         </header>
 
         <div className={gridClassName}>
@@ -37,9 +33,11 @@ export function Services() {
                   <Icon />
                 </span>
                 <Title level={4} className="service-title">
-                  {service.title}
+                  {t(`services.items.${service.id}.title`)}
                 </Title>
-                <Paragraph className="service-description">{service.description}</Paragraph>
+                <Paragraph className="service-description">
+                  {t(`services.items.${service.id}.description`)}
+                </Paragraph>
               </Card>
             )
           })}

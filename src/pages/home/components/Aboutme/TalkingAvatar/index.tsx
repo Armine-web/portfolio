@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import { useDidTalkingAvatar } from '../../../../../shared/hooks/useDidTalkingAvatar'
 import { DEFAULT_TALK_SCRIPT, DID_AVATAR_IMAGE_URL } from '../../../../../services/didTalksConstants'
 import styles from './style.module.css'
 
 export const TalkingAvatar = () => {
+  const { t } = useTranslation()
   const {
     speechText,
     setSpeechText,
@@ -43,12 +45,12 @@ export const TalkingAvatar = () => {
                   }}
                   className={styles.avatarMedia}
                 >
-                  Your browser does not support embedded video.
+                  {t('talkingAvatar.videoUnsupported')}
                 </video>
               ) : (
                 <img
                   src={DID_AVATAR_IMAGE_URL}
-                  alt="Portrait used for the AI talking avatar"
+                  alt={t('talkingAvatar.avatarAlt')}
                   className={styles.avatarMedia}
                   width={176}
                   height={176}
@@ -61,17 +63,17 @@ export const TalkingAvatar = () => {
 
         <div className={styles.content}>
           <div>
-            <h3 className={styles.heading}>Hear about me from my avatar</h3>
+            <h3 className={styles.heading}>{t('talkingAvatar.heading')}</h3>
           </div>
 
           <label>
-            <span className={styles.label}>Speech script</span>
+            <span className={styles.label}>{t('talkingAvatar.speechScriptLabel')}</span>
             <textarea
               value={speechText}
               onChange={(event) => setSpeechText(event.target.value)}
               rows={5}
               disabled={isBusy}
-              placeholder="Write what you want the avatar to say…"
+              placeholder={t('talkingAvatar.speechPlaceholder')}
               className={styles.textarea}
             />
           </label>
@@ -83,11 +85,11 @@ export const TalkingAvatar = () => {
               disabled={!canSubmit}
               className={styles.primaryButton}
             >
-              {isBusy ? 'Rendering…' : 'Generate video'}
+              {isBusy ? t('talkingAvatar.rendering') : t('talkingAvatar.generateVideo')}
             </button>
             {isBusy ? (
               <button type="button" onClick={cancelGeneration} className={styles.cancelButton}>
-                Cancel
+                {t('talkingAvatar.cancel')}
               </button>
             ) : null}
           </div>
@@ -100,8 +102,8 @@ export const TalkingAvatar = () => {
               </span>
               <span>
                 {phase === 'creating'
-                  ? 'Submitting your script to D-ID…'
-                  : 'Rendering your video — this can take up to a few minutes.'}
+                  ? t('talkingAvatar.statusCreating')
+                  : t('talkingAvatar.statusPolling')}
               </span>
             </div>
           ) : null}

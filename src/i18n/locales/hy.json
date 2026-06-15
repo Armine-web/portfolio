@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Արմինե Աղաջանյան — Front-End Developer Portfolio",
+    "description": "Front-End ծրագրավորող, որը մասնագիտանում է բարձր արագագործության, գեղեցիկ և ֆունկցիոնալ վեբ փորձառությունների ստեղծման մեջ։"
+  },
+  "languageSwitcher": {
+    "label": "Լեզու",
+    "hy": "Հայերեն",
+    "en": "English",
+    "ru": "Русский"
+  },
+  "nav": {
+    "ariaLabel": "Հիմնական նավարկում",
+    "home": "ԳԼԽԱՎՈՐ",
+    "work": "ԱՇԽԱՏԱՆՔ",
+    "skills": "ՀՄՏՈՒԹՅՈՒՆՆԵՐ",
+    "about": "ԻՄ ՄԱՍԻՆ",
+    "contact": "ԿԱՊ"
+  },
+  "hero": {
+    "firstName": "Արմինե",
+    "lastName": "Աղաջանյան",
+    "description": "Front-End ծրագրավորող, որը մասնագիտանում է բարձր արագագործության, գեղեցիկ և ֆունկցիոնալ վեբ փորձառությունների ստեղծման մեջ։",
+    "showCv": "Դիտել CV-ն",
+    "hideCv": "Թաքցնել CV-ն",
+    "letsTalk": "Եկեք զրուցենք",
+    "send": "Ուղարկել",
+    "geminiPlaceholder": "Գրեք ձեր հարցը Gemini-ին...",
+    "thinking": "Մտածում եմ...",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "heroTopBar": {
+    "availability": "ՀԱՍԱՆԵԼԻ ԵՄ ՆԱԽԱԳԾԵՐԻ ՀԱՄԱՐ",
+    "hireMe": "Աշխատանքի անցնել"
+  },
+  "heroVisual": {
+    "experienceTitle": "React փորձագետ",
+    "experienceValue": "3+ տարի"
+  },
+  "hireMeModal": {
+    "title": "Պատվիրել նախագիծ",
+    "submit": "Ուղարկել հաղորդագրություն",
+    "fullNameLabel": "Անուն Ազգանուն",
+    "fullNamePlaceholder": "Հովհաննես Պետրոսյան",
+    "emailLabel": "Էլ. փոստ",
+    "emailPlaceholder": "name@example.com",
+    "messageLabel": "Հաղորդագրություն",
+    "messagePlaceholder": "Պատմեք ձեր նախագծի մասին..."
+  },
+  "about": {
+    "imageAlt": "Իմ մասին պատկեր",
+    "avatarAlt": "AI ավատարի համար օգտագործված դիմանկար",
+    "overline": "ԻՄ ՄԱՍԻՆ",
+    "titleLine1": "Կապելով կոդը և",
+    "titleLine2": "թվային էսթետիկան",
+    "description": "Ես ծրագրավորող եմ, ով հավատում է, որ ծրագիրը պետք է լինի այնքան գեղեցիկ, որքան և ֆունկցիոնալ։ Ժամանակակից JavaScript շրջանակների (frameworks) հիմքով ես կառուցում եմ ինտերֆեյսներ, որոնք ամրապնդում են օգտատիրոջ կապը բրենդի հետ։",
+    "stats": {
+      "experienceValue": "3+ տ.",
+      "experienceLabel": "Փորձ",
+      "projectsValue": "60+",
+      "projectsLabel": "Նախագծեր",
+      "clientsValue": "Ամենուր",
+      "clientsLabel": "Հաճախորդներ"
+    }
+  },
+  "skills": {
+    "eyebrow": "ՏԵԽՆՈԼՈԳԻԱԿԱՆ ԿԱԶՄ",
+    "title": "Իմ հիմնական հմտությունները"
+  },
+  "services": {
+    "eyebrow": "ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ",
+    "title": "Ինչ եմ առաջարկում",
+    "description": "Կենտրոնանում եմ արագագործության և հասանելիության վրա, որպեսզի ձեր արտադրանքը հասանելի լինի յուրաքանչյուր օգտատիրոջ։",
+    "items": {
+      "web-development": {
+        "title": "Վեբ մշակում",
+        "description": "React հավելվածներ՝ կառուցված ժամանակակից լավագույն փորձառություններով և մասշտաբավորվող արխիտեկտուրայով։"
+      },
+      "ui-ux": {
+        "title": "UI/UX իրականացում",
+        "description": "Բարդ դիզայն-համակարգերի վերածում pixel-perfect և ինտերակտիվ front-end կոդի։"
+      },
+      "responsive-design": {
+        "title": "Ադապտիվ (Responsive) դիզայն",
+        "description": "Ապահովում եմ անխափան աշխատանք բոլոր էկրանների վրա՝ բջջայիններից մինչև ultra-wide մոնիտորներ։"
+      },
+      "performance": {
+        "title": "Օպտիմալացում",
+        "description": "Օպտիմալացնում եմ բեռնման արագությունը և runtime աշխատանքը՝ արագ և սահուն փոխազդեցությունների համար։"
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "ԱՇԽԱՏԱՆՔՆԵՐ",
+    "title": "Նախագծեր",
+    "liveDemo": "Դիտել օնլայն",
+    "github": "GitHub",
+    "items": {
+      "kassaman-jewelry-shop": {
+        "title": "Kassaman Jewelry Shop"
+      },
+      "jraghats-wines-collection": {
+        "title": "Jraghats Wines Collection"
+      },
+      "delivery-website": {
+        "title": "Delivery Your food to your Home"
+      }
+    }
+  },
+  "reviewers": {
+    "eyebrow": "ԿԱՐԾԻՔՆԵՐ",
+    "showTestimonialAria": "Ցույց տալ {{name}}-ի կարծիքը",
+    "items": {
+      "jonathan": {
+        "quote": "Արմինեն այն բացառիկ մասնագետներից է, ով հիանալի հասկանում է ժամանակակից վեբ դիզայնի նրբությունները։ Նա ղեկավարեց մեր նախագիծը և ստեղծեց pixel-perfect ֆրոնտենդ, որը զգալիորեն արագ է նախորդ տարբերակից։",
+        "name": "Jonathan Wright",
+        "role": "CTO @ TECHPULSE GLOBAL"
+      },
+      "sophia": {
+        "quote": "Արմինեի հետ աշխատանքն անխափան է, կապը՝ միշտ հասանելի, իսկ կատարումը՝ արագ։ Արդյունքն ամբողջությամբ համապատասխանում է մեր բրենդի ոճին։",
+        "name": "Sophia Morgan",
+        "role": "PRODUCT LEAD @ NOVASTACK"
+      },
+      "alex": {
+        "quote": "Նրա ինժեներական աշխատանքը գերազանց է։ Մենք անմիջապես զգացինք արագագործության և հասանելիության բարելավման արդյունքները։",
+        "name": "Alex Carter",
+        "role": "FOUNDER @ LUMEN LABS"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "ԿԱՊ",
+    "title": "Եկեք ստեղծենք ինչ-որ հրաշալի բան",
+    "description": "Ունեք նախագի՞ծ, թե՞ պարզապես ուզում եք կապ հաստատել։ Գրեք ինձ ստորև նշված տարբերակներով։",
+    "submit": "Ուղարկել հաղորդագրություն",
+    "fullNameLabel": "Անուն Ազգանուն",
+    "fullNamePlaceholder": "Ձեր անուն ազգանունը",
+    "emailLabel": "Էլ. փոստի հասցե",
+    "emailPlaceholder": "name@example.com",
+    "messageLabel": "Հաղորդագրություն",
+    "messagePlaceholder": "Պատմեք ձեր նախագծի մասին...",
+    "channels": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "telegramValue": "Բացել Telegram-ում"
+    },
+    "channelAria": "Կապ {{label}}-ով. {{value}}"
+  },
+  "talkingAvatar": {
+    "videoUnsupported": "Ձեր բրաուզերը չի աջակցում տեսանյութերի նվագարկումը։",
+    "avatarAlt": "AI ավատարի համար օգտագործված դիմանկար",
+    "heading": "Իմացեք իմ մասին իմ ավատարից",
+    "speechScriptLabel": "Խոսքի տեքստ",
+    "speechPlaceholder": "Գրեք, թե ինչ պետք է ասի ավատարը…",
+    "generateVideo": "Ստեղծել տեսանյութ",
+    "rendering": "Ստեղծվում է (Rendering)…",
+    "cancel": "Չեղարկել",
+    "statusCreating": "Տեքստն ուղարկվում է D-ID…",
+    "statusPolling": "Տեսանյութը պատրաստվում է. դա կարող է տևել մի քանի րոպե։",
+    "minCharactersError": "Մուտքագրեք առնվազն 3 նիշ (D-ID տեքստի նվազագույն պահանջ)։",
+    "genericError": "Ինչ-որ բան սխալ գնաց։"
+  },
+  "validation": {
+    "fullNameRequired": "Խնդրում ենք մուտքագրել ձեր անուն ազգանունը",
+    "fullNameMin": "Անունը պետք է լինի առնվազն 2 նիշ",
+    "emailRequired": "Խնդրում ենք մուտքագրել ձեր էլ. փոստի հասցեն",
+    "emailInvalid": "Խնդրում ենք մուտքագրել վավեր էլ. փոստի հասցե",
+    "messageRequired": "Խնդրում ենք գրել ձեր հաղորդագրությունը",
+    "messageMin": "Հաղորդագրությունը պետք է լինի առնվազն 10 նիշ"
+  },
+  "messages": {
+    "sendSuccess": "Հաղորդագրությունը հաջողությամբ ուղարկվել է",
+    "sendFailed": "Հաղորդագրությունն ուղարկել չհաջողվեց։ Խնդրում ենք կրկին փորձել։",
+    "telegramNotConfigured": "Telegram-ը կոնֆիգուրացված չէ։ Սահմանեք VITE_TELEGRAM_BOT_TOKEN և VITE_TELEGRAM_CHAT_ID փոփոխականները .env ֆայլում։",
+    "telegramSendFailed": "Telegram հաղորդագրությունն ուղարկել չհաջողվեց"
+  }
+}

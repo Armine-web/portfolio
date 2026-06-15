@@ -1,3 +1,5 @@
+import i18n from '../../i18n'
+
 export type TelegramMessageValues = {
   fullName: string
   email: string
@@ -27,9 +29,7 @@ export const sendTelegramMessage = async (values: TelegramMessageValues): Promis
   const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID?.trim()
 
   if (!botToken || !chatId) {
-    throw new Error(
-      'Telegram is not configured. Set VITE_TELEGRAM_BOT_TOKEN and VITE_TELEGRAM_CHAT_ID in your .env file.',
-    )
+    throw new Error(i18n.t('messages.telegramNotConfigured'))
   }
 
   const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -45,7 +45,7 @@ export const sendTelegramMessage = async (values: TelegramMessageValues): Promis
   const data = (await response.json()) as TelegramSendMessageResponse
 
   if (!response.ok || !data.ok) {
-    throw new Error(data.description ?? 'Failed to send Telegram message')
+    throw new Error(data.description ?? i18n.t('messages.telegramSendFailed'))
   }
 }
 

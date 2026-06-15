@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { isAxiosError, AxiosError } from 'axios'
+import i18n from '../../i18n'
 import { createTalk, pollTalkUntilTerminal } from '../../services/didTalksApi'
 import {
   DEFAULT_TALK_SCRIPT,
@@ -41,7 +42,7 @@ export const useDidTalkingAvatar = (initialScript: string = DEFAULT_TALK_SCRIPT)
   const generateVideo = useCallback(async () => {
     const trimmed = speechText.trim()
     if (trimmed.length < 3) {
-      setErrorMessage('Please enter at least 3 characters (D-ID script minimum).')
+      setErrorMessage(i18n.t('talkingAvatar.minCharactersError'))
       setPhase('error')
       return
     }
@@ -69,7 +70,8 @@ export const useDidTalkingAvatar = (initialScript: string = DEFAULT_TALK_SCRIPT)
         setPhase('idle')
         return
       }
-      const message = error instanceof Error ? error.message : 'Something went wrong.'
+      const message =
+        error instanceof Error ? error.message : i18n.t('talkingAvatar.genericError')
       setErrorMessage(message)
       setPhase('error')
     } finally {

@@ -39,6 +39,20 @@
   gap: 14px;
 }
 
+.gemini-prompt-row {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .gemini-prompt-input {
   width: min(100%, 620px);
   border: 1px solid rgba(212, 160, 110, 0.38);

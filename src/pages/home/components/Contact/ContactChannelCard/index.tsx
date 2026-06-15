@@ -1,7 +1,8 @@
 import type { MouseEvent } from 'react'
 import { Card, Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
 import type { ContactChannel } from '../const'
-import { getContactChannelHref, opensContactChannelInNewTab } from '../utils'
+import { getContactChannelHref, getContactChannelValue, opensContactChannelInNewTab } from '../utils'
 
 const { Title, Text } = Typography
 
@@ -10,7 +11,10 @@ type ContactChannelCardProps = {
 }
 
 export function ContactChannelCard({ channel }: ContactChannelCardProps) {
+  const { t } = useTranslation()
   const Icon = channel.icon
+  const label = t(`contact.channels.${channel.id}`)
+  const value = getContactChannelValue(channel, t)
   const href = getContactChannelHref(channel)
   const isEmail = channel.id === 'email'
   const openInNewTab = opensContactChannelInNewTab(channel.id)
@@ -28,7 +32,7 @@ export function ContactChannelCard({ channel }: ContactChannelCardProps) {
     <a
       href={href}
       className="contact-item-link"
-      aria-label={`Contact via ${channel.label}: ${channel.value}`}
+      aria-label={t('contact.channelAria', { label, value })}
       onClick={handleClick}
       {...(openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
@@ -37,9 +41,9 @@ export function ContactChannelCard({ channel }: ContactChannelCardProps) {
           <Icon />
         </span>
         <div>
-          <Text className="contact-item-label">{channel.label}</Text>
+          <Text className="contact-item-label">{label}</Text>
           <Title level={5} className="contact-item-value">
-            {channel.value}
+            {value}
           </Title>
         </div>
       </Card>

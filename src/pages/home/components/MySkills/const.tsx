@@ -11,8 +11,6 @@ import {
 } from '@ant-design/icons'
 
 export const SKILLS_SECTION_ID = 'skills'
-export const SKILLS_EYEBROW = 'TECH STACK'
-export const SKILLS_TITLE = 'My Core Competencies'
 
 export type SkillItem = {
   id: string

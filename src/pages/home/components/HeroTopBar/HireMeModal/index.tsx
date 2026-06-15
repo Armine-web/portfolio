@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { App, Button, Form, Input, Modal } from 'antd'
+import { useTranslation } from 'react-i18next'
 import { sendHireMeMessage, type HireMeFormValues } from '../../../../../api/emailjs/hireMe'
-import { HIRE_ME_MODAL_TITLE, HIRE_ME_SUBMIT_TEXT } from './const'
+import { useValidationRules } from '../../../../../shared/hooks/useValidationRules'
 
 const { TextArea } = Input
 
@@ -11,6 +12,8 @@ type HireMeModalProps = {
 }
 
 export function HireMeModal({ open, onClose }: HireMeModalProps) {
+  const { t } = useTranslation()
+  const validationRules = useValidationRules()
   const { message: toast } = App.useApp()
   const [form] = Form.useForm<HireMeFormValues>()
   const [loading, setLoading] = useState(false)
@@ -31,10 +34,10 @@ export function HireMeModal({ open, onClose }: HireMeModalProps) {
       })
       form.resetFields()
       onClose()
-      toast.success('Message sent successfully')
+      toast.success(t('messages.sendSuccess'))
     } catch (error) {
       const errorMessage =
-        error instanceof Error ? error.message : 'Failed to send message. Please try again.'
+        error instanceof Error ? error.message : t('messages.sendFailed')
       toast.error(errorMessage)
     } finally {
       setLoading(false)
@@ -43,7 +46,7 @@ export function HireMeModal({ open, onClose }: HireMeModalProps) {
 
   return (
     <Modal
-      title={HIRE_ME_MODAL_TITLE}
+      title={t('hireMeModal.title')}
       open={open}
       onCancel={handleClose}
       footer={null}
@@ -52,40 +55,27 @@ export function HireMeModal({ open, onClose }: HireMeModalProps) {
     >
       <Form<HireMeFormValues> form={form} layout="vertical" onFinish={handleSubmit}>
         <Form.Item
-          label="Full Name"
+          label={t('hireMeModal.fullNameLabel')}
           name="fullName"
-          rules={[
-            { required: true, message: 'Please enter your full name' },
-            { min: 2, message: 'Name must be at least 2 characters' },
-          ]}
+          rules={validationRules.fullName}
         >
-          <Input placeholder="John Doe" />
+          <Input placeholder={t('hireMeModal.fullNamePlaceholder')} />
+        </Form.Item>
+
+        <Form.Item label={t('hireMeModal.emailLabel')} name="email" rules={validationRules.email}>
+          <Input placeholder={t('hireMeModal.emailPlaceholder')} />
         </Form.Item>
 
         <Form.Item
-          label="Email"
-          name="email"
-          rules={[
-            { required: true, message: 'Please enter your email address' },
-            { type: 'email', message: 'Please enter a valid email address' },
-          ]}
-        >
-          <Input placeholder="john@example.com" />
-        </Form.Item>
-
-        <Form.Item
-          label="Message"
+          label={t('hireMeModal.messageLabel')}
           name="message"
-          rules={[
-            { required: true, message: 'Please write your message' },
-            { min: 10, message: 'Message must be at least 10 characters' },
-          ]}
+          rules={validationRules.message}
         >
-          <TextArea rows={5} placeholder="Tell me about your project..." />
+          <TextArea rows={5} placeholder={t('hireMeModal.messagePlaceholder')} />
         </Form.Item>
 
         <Button type="primary" htmlType="submit" block loading={loading}>
-          {HIRE_ME_SUBMIT_TEXT}
+          {t('hireMeModal.submit')}
         </Button>
       </Form>
     </Modal>

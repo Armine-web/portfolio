@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import { App, Button, Card, Form, Input, Typography } from 'antd'
-import {
-  CONTACT_CHANNELS,
-  CONTACT_DESCRIPTION,
-  CONTACT_EYEBROW,
-  CONTACT_SECTION_ID,
-  CONTACT_SUBMIT_TEXT,
-  CONTACT_TITLE,
-} from './const'
+import { useTranslation } from 'react-i18next'
+import { CONTACT_CHANNELS, CONTACT_SECTION_ID } from './const'
 import { sendTelegramMessage } from '../../../../api/telegram'
 import { ContactChannelCard } from './ContactChannelCard'
 import { getContactGridClassName } from './utils'
+import { useValidationRules } from '../../../../shared/hooks/useValidationRules'
 import './style.css'
 
 const { Title, Text, Paragraph } = Typography
@@ -23,6 +18,8 @@ type ContactFormValues = {
 }
 
 export function Contact() {
+  const { t } = useTranslation()
+  const validationRules = useValidationRules()
   const { message: toast } = App.useApp()
   const gridClassName = getContactGridClassName()
   const [form] = Form.useForm<ContactFormValues>()
@@ -39,12 +36,10 @@ export function Contact() {
       })
 
       form.resetFields()
-      toast.success('Message sent successfully')
+      toast.success(t('messages.sendSuccess'))
     } catch (error) {
       const errorMessage =
-        error instanceof Error
-          ? error.message
-          : 'Failed to send message. Please try again.'
+        error instanceof Error ? error.message : t('messages.sendFailed')
 
       toast.error(errorMessage)
     } finally {
@@ -57,17 +52,13 @@ export function Contact() {
       <div className="contact-shell">
         <div className={gridClassName}>
           <div>
-            <Text className="contact-eyebrow">
-              {CONTACT_EYEBROW}
-            </Text>
+            <Text className="contact-eyebrow">{t('contact.eyebrow')}</Text>
 
             <Title level={2} className="contact-title">
-              {CONTACT_TITLE}
+              {t('contact.title')}
             </Title>
 
-            <Paragraph className="contact-description">
-              {CONTACT_DESCRIPTION}
-            </Paragraph>
+            <Paragraph className="contact-description">{t('contact.description')}</Paragraph>
 
             <div className="contact-list">
               {CONTACT_CHANNELS.map((channel) => (
@@ -76,85 +67,35 @@ export function Contact() {
             </div>
           </div>
 
-          <Card className="contact-form-card" >
-            <Form<ContactFormValues>
-              form={form}
-              layout="vertical"
-              onFinish={handleSubmit}
-            >
+          <Card className="contact-form-card">
+            <Form<ContactFormValues> form={form} layout="vertical" onFinish={handleSubmit}>
               <Form.Item
                 className="contact-field"
-                label={
-                  <span className="contact-field-label">
-                    FULL NAME
-                  </span>
-                }
+                label={<span className="contact-field-label">{t('contact.fullNameLabel')}</span>}
                 name="fullName"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your full name',
-                  },
-                  {
-                    min: 2,
-                    message: 'Name must be at least 2 characters',
-                  },
-                ]}
+                rules={validationRules.fullName}
               >
-                <Input
-                  placeholder="Your Full Name"
-                  className="contact-input"
-                />
+                <Input placeholder={t('contact.fullNamePlaceholder')} className="contact-input" />
               </Form.Item>
 
               <Form.Item
                 className="contact-field"
-                label={
-                  <span className="contact-field-label">
-                    EMAIL ADDRESS
-                  </span>
-                }
+                label={<span className="contact-field-label">{t('contact.emailLabel')}</span>}
                 name="email"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please enter your email address',
-                  },
-                  {
-                    type: 'email',
-                    message: 'Please enter a valid email address',
-                  },
-                ]}
+                rules={validationRules.email}
               >
-                <Input
-                  placeholder="name@example.com"
-                  className="contact-input"
-                />
+                <Input placeholder={t('contact.emailPlaceholder')} className="contact-input" />
               </Form.Item>
 
               <Form.Item
                 className="contact-field"
-                label={
-                  <span className="contact-field-label">
-                    MESSAGE
-                  </span>
-                }
+                label={<span className="contact-field-label">{t('contact.messageLabel')}</span>}
                 name="message"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please write your message',
-                  },
-                  {
-                    min: 10,
-                    message:
-                      'Message must be at least 10 characters',
-                  },
-                ]}
+                rules={validationRules.message}
               >
                 <TextArea
                   rows={6}
-                  placeholder="Tell me about your project..."
+                  placeholder={t('contact.messagePlaceholder')}
                   className="contact-textarea"
                 />
               </Form.Item>
@@ -166,7 +107,7 @@ export function Contact() {
                 className="contact-submit"
                 loading={loading}
               >
-                {CONTACT_SUBMIT_TEXT}
+                {t('contact.submit')}
               </Button>
             </Form>
           </Card>

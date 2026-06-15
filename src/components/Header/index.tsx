@@ -6,6 +6,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { NAV_ITEMS, type NavItemId } from './const'
 import { isNavItemActive, scrollToSection } from './utils'
 import './style.css'
@@ -22,6 +23,7 @@ const NAV_ICONS: Record<
 }
 
 export function Header() {
+  const { t } = useTranslation()
   const [activeId, setActiveId] = useState<NavItemId>('home')
 
   const handleSelect = (id: NavItemId) => {
@@ -32,7 +34,7 @@ export function Header() {
   return (
     <div className="header-dock">
       <div className="header-dock-panel">
-        <nav className="floating-nav" aria-label="Primary">
+        <nav className="floating-nav" aria-label={t('nav.ariaLabel')}>
           <ul className="floating-nav-bar">
             {NAV_ITEMS.map((item) => {
               const active = isNavItemActive(activeId, item.id)
@@ -50,7 +52,7 @@ export function Header() {
                       <span className="nav-icon" aria-hidden>
                         <Icon />
                       </span>
-                      <span className="nav-label">{item.label}</span>
+                      <span className="nav-label">{t(`nav.${item.id}`)}</span>
                     </span>
                   </button>
                 </li>

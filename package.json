@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@ant-design/icons": "^6.1.1",
+    "@emailjs/browser": "^4.4.1",
     "antd": "^6.3.6",
     "axios": "^1.15.2",
+    "i18next": "^26.3.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-i18next": "^17.0.8",
     "react-markdown": "^10.1.0"
   },
   "devDependencies": {

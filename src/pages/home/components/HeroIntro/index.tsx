@@ -2,18 +2,12 @@ import { DownloadOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/
 import ReactMarkdown from 'react-markdown'
 import { useState, useMemo } from 'react'
 import type { KeyboardEvent } from 'react'
-import { generateGeminiResponse } from '../../../../services/geminiService';
-import { cvData } from '../../../../data/cvData';
-import {
-  HERO_DESCRIPTION,
-  HERO_FIRST_NAME,
-  HERO_LAST_NAME,
-  PRIMARY_CTA_TEXT,
-  SECONDARY_CTA_TEXT,
-} from './const'
+import { useTranslation } from 'react-i18next'
+import { generateGeminiResponse } from '../../../../services/geminiService'
+import { cvData } from '../../../../data/cvData'
 import { getSocialLinks } from './utils'
 import './style.css'
-import { cvMarkdown } from '../../../../data/cvMarkdown';
+import { cvMarkdown } from '../../../../data/cvMarkdown'
 
 const socialIconByKind = {
   github: <GithubOutlined />,
@@ -22,6 +16,7 @@ const socialIconByKind = {
 } as const
 
 export function HeroIntro() {
+  const { t } = useTranslation()
   const socialLinks = getSocialLinks()
   const [geminiPrompt, setGeminiPrompt] = useState('')
   const [geminiAnswer, setGeminiAnswer] = useState('')
@@ -31,68 +26,65 @@ export function HeroIntro() {
   const [isInputVisible, setIsInputVisible] = useState(false)
 
   const cvContext = useMemo(() => {
-    return JSON.stringify(cvData);
-  }, []);
+    return JSON.stringify(cvData)
+  }, [])
 
   const renderedAnswer = useMemo(() => {
-    if (!geminiAnswer) return null;
-    return <ReactMarkdown>{geminiAnswer}</ReactMarkdown>;
-  }, [geminiAnswer]);
+    if (!geminiAnswer) return null
+    return <ReactMarkdown>{geminiAnswer}</ReactMarkdown>
+  }, [geminiAnswer])
 
   const handleTalkClick = async () => {
     if (!isInputVisible) {
-      setIsInputVisible(true);
-      return;
+      setIsInputVisible(true)
+      return
     }
 
-    if (isGeminiLoading) return;
+    if (isGeminiLoading) return
 
-    const currentPrompt = geminiPrompt.trim();
-    if (!currentPrompt) return;
+    const currentPrompt = geminiPrompt.trim()
+    if (!currentPrompt) return
 
-    setIsGeminiLoading(true);
-    setGeminiError('');
-    setGeminiPrompt('');
+    setIsGeminiLoading(true)
+    setGeminiError('')
+    setGeminiPrompt('')
 
     try {
-      const fullPrompt = `Context: ${cvContext}. Request: ${currentPrompt}`;
-      const response = await generateGeminiResponse(fullPrompt);
-      setGeminiAnswer(response);
-    } catch (error: any) {
-      setGeminiError(error.message);
+      const fullPrompt = `Context: ${cvContext}. Request: ${currentPrompt}`
+      const response = await generateGeminiResponse(fullPrompt)
+      setGeminiAnswer(response)
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : t('messages.sendFailed')
+      setGeminiError(errorMessage)
     } finally {
-      setIsGeminiLoading(false);
+      setIsGeminiLoading(false)
     }
-  };
+  }
 
   const handlePromptKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (
-      event.key === 'Enter' &&
-      !event.shiftKey &&
-      !isGeminiLoading
-    ) {
-      event.preventDefault();
-      void handleTalkClick();
+    if (event.key === 'Enter' && !event.shiftKey && !isGeminiLoading) {
+      event.preventDefault()
+      void handleTalkClick()
     }
   }
 
   return (
     <div className="hero-content">
       <h1 className="hero-name">
-        {HERO_FIRST_NAME}
+        {t('hero.firstName')}
         <br />
-        {HERO_LAST_NAME}
+        {t('hero.lastName')}
       </h1>
-      <p className="hero-description">{HERO_DESCRIPTION}</p>
+      <p className="hero-description">{t('hero.description')}</p>
 
       <div className="social-row">
         {socialLinks.map((link) => (
           <a
-            key={link.label}
+            key={link.kind}
             href={link.href}
             target={link.kind === 'github' ? '_blank' : undefined}
             rel={link.kind === 'github' ? 'noreferrer' : undefined}
-            aria-label={link.label}
+            aria-label={t(`hero.social.${link.kind}`)}
           >
             {socialIconByKind[link.kind]}
           </a>
@@ -105,7 +97,7 @@ export function HeroIntro() {
           className="primary-cta"
           onClick={() => setIsCvVisible(!isCvVisible)}
         >
-          {isCvVisible ? "Hide CV" : PRIMARY_CTA_TEXT}
+          {isCvVisible ? t('hero.hideCv') : t('hero.showCv')}
         </button>
         {isCvVisible && (
           <div className="cv-container">
@@ -128,18 +120,18 @@ export function HeroIntro() {
           onClick={handleTalkClick}
           disabled={isGeminiLoading}
         >
-          {isInputVisible ? 'Send' : SECONDARY_CTA_TEXT}
+          {isInputVisible ? t('hero.send') : t('hero.letsTalk')}
         </button>
       </div>
 
       {isInputVisible && (
-        <div className="cta-row" style={{ animation: 'fadeIn 0.3s ease' }}>
+        <div className="cta-row gemini-prompt-row">
           <textarea
             className="gemini-prompt-input"
             value={geminiPrompt}
             onChange={(event) => setGeminiPrompt(event.target.value)}
             onKeyDown={handlePromptKeyDown}
-            placeholder="Write your prompt for Gemini..."
+            placeholder={t('hero.geminiPlaceholder')}
             rows={2}
             disabled={isGeminiLoading}
             autoFocus
@@ -147,13 +139,9 @@ export function HeroIntro() {
         </div>
       )}
 
-      {isGeminiLoading ? <p className="gemini-state">Thinking...</p> : null}
+      {isGeminiLoading ? <p className="gemini-state">{t('hero.thinking')}</p> : null}
       {geminiError ? <p className="gemini-error">{geminiError}</p> : null}
-      {geminiAnswer ? (
-        <div className="gemini-answer">
-          {renderedAnswer}
-        </div>
-      ) : null}
+      {geminiAnswer ? <div className="gemini-answer">{renderedAnswer}</div> : null}
     </div>
   )
 }

@@ -1,3 +1,4 @@
+import type { TFunction } from 'i18next'
 import { getTelegramContactUrl } from '../../../../api/telegram'
 import type { ContactChannel } from './const'
 
@@ -7,6 +8,14 @@ export function getContactGridClassName() {
 
 export function getMailtoHref(email: string): string {
   return `mailto:${email.trim()}`
+}
+
+export function getContactChannelValue(channel: ContactChannel, t: TFunction): string {
+  if (channel.id === 'telegram') {
+    return t('contact.channels.telegramValue')
+  }
+
+  return channel.value
 }
 
 export function getContactChannelHref(channel: ContactChannel): string {

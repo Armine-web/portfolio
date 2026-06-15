@@ -1,20 +1,22 @@
 import { Card, Typography } from 'antd'
-import { SKILL_ITEMS, SKILLS_EYEBROW, SKILLS_SECTION_ID, SKILLS_TITLE } from './const'
+import { useTranslation } from 'react-i18next'
+import { SKILL_ITEMS, SKILLS_SECTION_ID } from './const'
 import { getSkillsGridClassName } from './utils'
 import './style.css'
 
 const { Title, Text } = Typography
 
 export function MySkills() {
+  const { t } = useTranslation()
   const gridClassName = getSkillsGridClassName()
 
   return (
     <section id={SKILLS_SECTION_ID} className="skills-section">
       <div className="skills-shell">
         <header className="skills-header">
-          <Text className="skills-eyebrow">{SKILLS_EYEBROW}</Text>
+          <Text className="skills-eyebrow">{t('skills.eyebrow')}</Text>
           <Title level={2} className="skills-title">
-            {SKILLS_TITLE}
+            {t('skills.title')}
           </Title>
         </header>
 

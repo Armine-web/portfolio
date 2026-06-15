@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Армине Агажанян — Front-End Developer Portfolio",
+    "description": "Front-End разработчик, специализирующийся на создании высокопроизводительных, эстетически продуманных веб-решений."
+  },
+  "languageSwitcher": {
+    "label": "Язык",
+    "hy": "Հայերեն",
+    "en": "English",
+    "ru": "Русский"
+  },
+  "nav": {
+    "ariaLabel": "Основная навигация",
+    "home": "ГЛАВНАЯ",
+    "work": "РАБОТЫ",
+    "skills": "НАВЫКИ",
+    "about": "ОБО МНЕ",
+    "contact": "КОНТАКТ"
+  },
+  "hero": {
+    "firstName": "Армине",
+    "lastName": "Агажанян",
+    "description": "Front-End разработчик, специализирующийся на создании высокопроизводительных, эстетически продуманных веб-решений.",
+    "showCv": "Показать CV",
+    "hideCv": "Скрыть CV",
+    "letsTalk": "Давайте поговорим",
+    "send": "Отправить",
+    "geminiPlaceholder": "Напишите ваш запрос для Gemini...",
+    "thinking": "Думаю...",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "heroTopBar": {
+    "availability": "ДОСТУПНА ДЛЯ ПРОЕКТОВ",
+    "hireMe": "Нанять меня"
+  },
+  "heroVisual": {
+    "experienceTitle": "React Expert",
+    "experienceValue": "3+ года"
+  },
+  "hireMeModal": {
+    "title": "Нанять меня",
+    "submit": "Отправить сообщение",
+    "fullNameLabel": "Полное имя",
+    "fullNamePlaceholder": "Иван Иванов",
+    "emailLabel": "Email",
+    "emailPlaceholder": "ivan@example.com",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Расскажите о вашем проекте..."
+  },
+  "about": {
+    "imageAlt": "Изображение обо мне",
+    "avatarAlt": "Портрет для AI-аватара",
+    "overline": "ОБО МНЕ",
+    "titleLine1": "Соединяя код и",
+    "titleLine2": "цифровую эстетику",
+    "description": "Я разработчик, который считает, что программное обеспечение должно быть таким же красивым, как и функциональным. Имея глубокую базу в современных JavaScript-фреймворках, я создаю интерфейсы, которые приоритизируют эмоциональную связь пользователя с брендом.",
+    "stats": {
+      "experienceValue": "+3 года",
+      "experienceLabel": "Опыт",
+      "projectsValue": "60+",
+      "projectsLabel": "Проекты",
+      "clientsValue": "По всему миру",
+      "clientsLabel": "Клиенты"
+    }
+  },
+  "skills": {
+    "eyebrow": "ТЕХНОЛОГИИ",
+    "title": "Мои ключевые компетенции"
+  },
+  "services": {
+    "eyebrow": "УСЛУГИ",
+    "title": "Что я предлагаю",
+    "description": "Фокусируюсь на производительности и доступности, чтобы ваш продукт идеально доходил до каждого пользователя.",
+    "items": {
+      "web-development": {
+        "title": "Веб-разработка",
+        "description": "Пользовательские React-приложения с современными best practices и масштабируемой архитектурой."
+      },
+      "ui-ux": {
+        "title": "UI/UX реализация",
+        "description": "Превращаю сложные дизайн-системы в pixel-perfect интерактивный front-end код."
+      },
+      "responsive-design": {
+        "title": "Адаптивный дизайн",
+        "description": "Обеспечиваю бесшовный опыт на всех экранах — от мобильных до ultra-wide."
+      },
+      "performance": {
+        "title": "Производительность",
+        "description": "Оптимизирую время загрузки и runtime-производительность для плавного взаимодействия."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "РАБОТЫ",
+    "title": "Избранные проекты",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "items": {
+      "kassaman-jewelry-shop": {
+        "title": "Kassaman Jewelry Shop"
+      },
+      "jraghats-wines-collection": {
+        "title": "Jraghats Wines Collection"
+      },
+      "delivery-website": {
+        "title": "Delivery Your food to your Home"
+      }
+    }
+  },
+  "reviewers": {
+    "eyebrow": "ОТЗЫВЫ",
+    "showTestimonialAria": "Показать отзыв от {{name}}",
+    "items": {
+      "jonathan": {
+        "quote": "Армине — редкий талант, понимающий нюансы современного веб-дизайна. Она взяла наше видение и создала frontend, который был не только pixel-perfect, но и значительно быстрее предыдущей реализации.",
+        "name": "Jonathan Wright",
+        "role": "CTO @ TECHPULSE GLOBAL"
+      },
+      "sophia": {
+        "quote": "Работа с Армине прошла безупречно. Коммуникация была ясной, выполнение быстрым, и каждая деталь идеально соответствовала нашему бренду на всех устройствах.",
+        "name": "Sophia Morgan",
+        "role": "PRODUCT LEAD @ NOVASTACK"
+      },
+      "alex": {
+        "quote": "Качество её инженерной работы выдающееся. Мы сразу увидели рост производительности и доступности, сохранив при этом polished и premium интерфейс.",
+        "name": "Alex Carter",
+        "role": "FOUNDER @ LUMEN LABS"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "КОНТАКТ",
+    "title": "Давайте создадим что-то великое",
+    "description": "Есть проект или просто хотите поздороваться? Свяжитесь со мной через любую из этих платформ.",
+    "submit": "ОТПРАВИТЬ СООБЩЕНИЕ",
+    "fullNameLabel": "ПОЛНОЕ ИМЯ",
+    "fullNamePlaceholder": "Ваше полное имя",
+    "emailLabel": "EMAIL АДРЕС",
+    "emailPlaceholder": "name@example.com",
+    "messageLabel": "СООБЩЕНИЕ",
+    "messagePlaceholder": "Расскажите о вашем проекте...",
+    "channels": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "telegramValue": "Открыть в Telegram"
+    },
+    "channelAria": "Связаться через {{label}}: {{value}}"
+  },
+  "talkingAvatar": {
+    "videoUnsupported": "Ваш браузер не поддерживает встроенное видео.",
+    "avatarAlt": "Портрет для AI-аватара",
+    "heading": "Узнайте обо мне от моего аватара",
+    "speechScriptLabel": "Текст речи",
+    "speechPlaceholder": "Напишите, что должен сказать аватар…",
+    "generateVideo": "Сгенерировать видео",
+    "rendering": "Рендеринг…",
+    "cancel": "Отмена",
+    "statusCreating": "Отправка текста в D-ID…",
+    "statusPolling": "Рендеринг видео — это может занять несколько минут.",
+    "minCharactersError": "Введите не менее 3 символов (минимум для D-ID).",
+    "genericError": "Что-то пошло не так."
+  },
+  "validation": {
+    "fullNameRequired": "Пожалуйста, введите ваше полное имя",
+    "fullNameMin": "Имя должно содержать не менее 2 символов",
+    "emailRequired": "Пожалуйста, введите ваш email",
+    "emailInvalid": "Пожалуйста, введите корректный email",
+    "messageRequired": "Пожалуйста, напишите ваше сообщение",
+    "messageMin": "Сообщение должно содержать не менее 10 символов"
+  },
+  "messages": {
+    "sendSuccess": "Сообщение успешно отправлено",
+    "sendFailed": "Не удалось отправить сообщение. Пожалуйста, попробуйте снова.",
+    "telegramNotConfigured": "Telegram не настроен. Установите VITE_TELEGRAM_BOT_TOKEN и VITE_TELEGRAM_CHAT_ID в файле .env.",
+    "telegramSendFailed": "Не удалось отправить сообщение в Telegram"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Armine Aghajanyan — Front-End Developer Portfolio",
+    "description": "Front-End Developer specializing in high-performance, aesthetically curated web experiences."
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "hy": "Հայերեն",
+    "en": "English",
+    "ru": "Русский"
+  },
+  "nav": {
+    "ariaLabel": "Primary navigation",
+    "home": "HOME",
+    "work": "WORK",
+    "skills": "SKILLS",
+    "about": "ABOUT",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "firstName": "Armine",
+    "lastName": "Aghajanyan",
+    "description": "Front-End Developer specializing in building high-performance, aesthetically curated web experiences.",
+    "showCv": "Show CV",
+    "hideCv": "Hide CV",
+    "letsTalk": "Let's Talk",
+    "send": "Send",
+    "geminiPlaceholder": "Write your prompt for Gemini...",
+    "thinking": "Thinking...",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "heroTopBar": {
+    "availability": "AVAILABLE FOR PROJECTS",
+    "hireMe": "Hire Me"
+  },
+  "heroVisual": {
+    "experienceTitle": "React Expert",
+    "experienceValue": "3+ Years"
+  },
+  "hireMeModal": {
+    "title": "Hire Me",
+    "submit": "Send Message",
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project..."
+  },
+  "about": {
+    "imageAlt": "About Me Image",
+    "avatarAlt": "Portrait used for the AI talking avatar",
+    "overline": "ABOUT ME",
+    "titleLine1": "Bridging Code and",
+    "titleLine2": "Digital Aesthetics",
+    "description": "I am a developer who believes that software should be as beautiful as it is functional. With a deep foundation in modern JavaScript frameworks, I build interfaces that prioritize the user's emotional connection to the brand.",
+    "stats": {
+      "experienceValue": "+3 yrs",
+      "experienceLabel": "Experience",
+      "projectsValue": "60+",
+      "projectsLabel": "Projects",
+      "clientsValue": "Worldwide",
+      "clientsLabel": "Clients"
+    }
+  },
+  "skills": {
+    "eyebrow": "TECH STACK",
+    "title": "My Core Competencies"
+  },
+  "services": {
+    "eyebrow": "SERVICES",
+    "title": "What I Bring To The Table",
+    "description": "Focused on performance and accessibility to ensure your product reaches every user perfectly.",
+    "items": {
+      "web-development": {
+        "title": "Web Development",
+        "description": "Custom React applications built with modern best practices and scalable architecture."
+      },
+      "ui-ux": {
+        "title": "UI/UX Implementation",
+        "description": "Transforming complex design systems into pixel-perfect, interactive front-end code."
+      },
+      "responsive-design": {
+        "title": "Responsive Design",
+        "description": "Ensuring seamless experiences across all screen sizes from mobile to ultra-wide desktops."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Optimizing load times and runtime performance for smooth, high-speed user interactions."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "WORK",
+    "title": "Featured Projects",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "items": {
+      "kassaman-jewelry-shop": {
+        "title": "Kassaman Jewelry Shop"
+      },
+      "jraghats-wines-collection": {
+        "title": "Jraghats Wines Collection"
+      },
+      "delivery-website": {
+        "title": "Delivery Your food to your Home"
+      }
+    }
+  },
+  "reviewers": {
+    "eyebrow": "TESTIMONIALS",
+    "showTestimonialAria": "Show testimonial from {{name}}",
+    "items": {
+      "jonathan": {
+        "quote": "Armine is a rare talent who understands the nuances of modern web design. She took our vision and delivered a frontend that was not only pixel-perfect but significantly faster than our previous implementation.",
+        "name": "Jonathan Wright",
+        "role": "CTO @ TECHPULSE GLOBAL"
+      },
+      "sophia": {
+        "quote": "Working with Armine was seamless. Communication was clear, execution was fast, and every detail matched our brand direction perfectly across devices.",
+        "name": "Sophia Morgan",
+        "role": "PRODUCT LEAD @ NOVASTACK"
+      },
+      "alex": {
+        "quote": "Her engineering quality is outstanding. We saw immediate gains in performance and accessibility while preserving a polished and premium interface.",
+        "name": "Alex Carter",
+        "role": "FOUNDER @ LUMEN LABS"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's Create Something Great",
+    "description": "Have a project in mind or just want to say hi? Feel free to reach out through any of these platforms.",
+    "submit": "SEND MESSAGE",
+    "fullNameLabel": "FULL NAME",
+    "fullNamePlaceholder": "Your Full Name",
+    "emailLabel": "EMAIL ADDRESS",
+    "emailPlaceholder": "name@example.com",
+    "messageLabel": "MESSAGE",
+    "messagePlaceholder": "Tell me about your project...",
+    "channels": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "telegramValue": "Open in Telegram"
+    },
+    "channelAria": "Contact via {{label}}: {{value}}"
+  },
+  "talkingAvatar": {
+    "videoUnsupported": "Your browser does not support embedded video.",
+    "avatarAlt": "Portrait used for the AI talking avatar",
+    "heading": "Hear about me from my avatar",
+    "speechScriptLabel": "Speech script",
+    "speechPlaceholder": "Write what you want the avatar to say…",
+    "generateVideo": "Generate video",
+    "rendering": "Rendering…",
+    "cancel": "Cancel",
+    "statusCreating": "Submitting your script to D-ID…",
+    "statusPolling": "Rendering your video — this can take up to a few minutes.",
+    "minCharactersError": "Please enter at least 3 characters (D-ID script minimum).",
+    "genericError": "Something went wrong."
+  },
+  "validation": {
+    "fullNameRequired": "Please enter your full name",
+    "fullNameMin": "Name must be at least 2 characters",
+    "emailRequired": "Please enter your email address",
+    "emailInvalid": "Please enter a valid email address",
+    "messageRequired": "Please write your message",
+    "messageMin": "Message must be at least 10 characters"
+  },
+  "messages": {
+    "sendSuccess": "Message sent successfully",
+    "sendFailed": "Failed to send message. Please try again.",
+    "telegramNotConfigured": "Telegram is not configured. Set VITE_TELEGRAM_BOT_TOKEN and VITE_TELEGRAM_CHAT_ID in your .env file.",
+    "telegramSendFailed": "Failed to send Telegram message"
+  }
+}
